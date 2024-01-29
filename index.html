@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Zero Two - Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="/img/logo.png" />
+  <meta name="theme-color" content="#3a9fff">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo"><img class="header__img" src="/img/logoS.png">
+        <h1 class="header__title">ZeroTwo<span class="header__light">.in</span></h1>
+      </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+        aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div class="header__menu">
+        <nav id="navbar" class="header__nav collapse">
+          <ul class="header__elenco">
+            <li class="header__el"><a href="/index.html" class="header__link">Home</a></li>
+            <li class="header__el"><a href="/upload.html" class="header__link">Upload</a></li>
+            <li class="header__el"><a href="/download.html" class="header__link">Search</a></li>
+            <li class="header__el"><a href="/privacy-policy.html" class="header__link">Privacy Policy</a></li>
+            <li class="header__el"><a href="#" class="header__link">Contact us</a></li>
+            <li class="header__el header__el--blue log-in-button"><a href="#0" class="btn btn--white">Sign In →</a></li>
+          </ul>
+        </nav>
+      </div>
+      <hr class="harcl">
+    </div>
+  </header>
+
+  <div class="cd-user-modal" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="cd-user-modal-container">
+      <ul class="cd-switcher">
+        <li><a href="#0">Sign in</a></li>
+        <li><a href="#0">New account</a></li>
+      </ul>
+
+      <div id="cd-login">
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="signin-email">E-mail</label>
+            <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signin-password">Password</label>
+            <input class="full-width has-padding has-border" id="signin-password" type="text" placeholder="Password">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input type="checkbox" id="remember-me" checked>
+            <label for="remember-me">Remember me</label>
+          </p>
+
+          <p class="fieldset">
+            <input class="full-width" type="submit" value="Login">
+          </p>
+        </form>
+
+        <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+      </div>
+
+      <div id="cd-signup">
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-username" for="signup-username">Username</label>
+            <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="signup-email">E-mail</label>
+            <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signup-password">Password</label>
+            <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input type="checkbox" id="accept-terms">
+            <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+          </p>
+
+          <p class="fieldset">
+            <input class="full-width has-padding" type="submit" value="Create account">
+          </p>
+        </form>
+
+      </div>
+
+      <div id="cd-reset-password">
+        <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to
+          create a new password.</p>
+
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="reset-email">E-mail</label>
+            <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input class="full-width has-padding" type="submit" value="Reset password">
+          </p>
+        </form>
+
+        <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+      </div>
+      <a href="#0" class="cd-close-form">Close</a>
+    </div>
+  </div>
+
+  <div class="sect sect--padding-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="site">
+            <h1 class="site__title">Fast way to upload & share content</h1>
+            <h2 class="site__subtitle">Share file like a pro</h2>
+            <div class="site__box-link">
+              <a class="btn btn--width" href="/upload.html">Upload</a>
+              <a class="btn btn--revert btn--width sign-up-button" href="#0">Sign Up →</a>
+            </div>
+            <img class="site__img" src="/img/upload.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect" id="set-margin-about">
+    <div class="container">
+      <div class="row row--center">
+        <h1 class="row__title">
+          Pricing
+        </h1>
+        <h2 class="row__sub">What fits your business the best?</h2>
+      </div>
+      <div class="row row--center row--margin">
+        <div class="col-md-4 col-sm-4 price-box price-box--purple">
+          <div class="price-box__wrap">
+            <div class="price-box__img"></div>
+            <h1 class="price-box__title">
+              Free
+            </h1>
+            <p class="price-box__people">
+              1 - Files Upload's / At a time
+            </p>
+            <h2 class="price-box__discount">
+              <span class="price-box__dollar">$</span>0<span class="price-box__discount--light">/mo</span>
+            </h2>
+            <h3 class="price-box__price">
+              $5/mo
+            </h3>
+            <p class="price-box__feat">
+              Features
+            </p>
+            <ul class="price-box__list">
+              <li class="price-box__list-el">Unlimited Upload</li>
+              <li class="price-box__list-el">Ads in download page</li>
+              <li class="price-box__list-el">No Api Access</li>
+              <li class="price-box__list-el">No Direct Link</li>
+            </ul>
+            <div class="price-box__btn">
+              <a class="btn btn--purple btn--width">Start now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 price-box price-box--violet">
+          <div class="price-box__wrap">
+            <div class="price-box__img"></div>
+            <h1 class="price-box__title">
+              Business
+            </h1>
+            <p class="price-box__people">
+              100 - 500 Files Upload's / At a time
+            </p>
+            <h2 class="price-box__discount">
+              <span class="price-box__dollar">$</span>15<span class="price-box__discount--light">/mo</span>
+            </h2>
+            <h3 class="price-box__price">
+              $25/mo
+            </h3>
+            <p class="price-box__feat">
+              Features
+            </p>
+            <ul class="price-box__list">
+              <li class="price-box__list-el">All Free Features</li>
+              <li class="price-box__list-el">Upload files upto 4gb</li>
+              <li class="price-box__list-el">Api access</li>
+              <li class="price-box__list-el">No ads in download page</li>
+              <li class="price-box__list-el">File Direct Link</li>
+            </ul>
+            <div class="price-box__btn">
+              <a class="btn btn--violet btn--width">Start now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 price-box price-box--blue">
+          <div class="price-box__wrap">
+            <div class="price-box__img"></div>
+            <h1 class="price-box__title">
+              Corporate
+            </h1>
+            <p class="price-box__people">
+              500 - 6000 Files Upload's / At a time
+            </p>
+            <h2 class="price-box__discount">
+              <span class="price-box__dollar">$</span>25<span class="price-box__discount--light">/mo</span>
+            </h2>
+            <h3 class="price-box__price">
+              $55/mo
+            </h3>
+            <p class="price-box__feat">
+              Features
+            </p>
+            <ul class="price-box__list">
+              <li class="price-box__list-el">Everything of Business / Free</li>
+              <li class="price-box__list-el">Unlimited API Access</li>
+              <li class="price-box__list-el">Custom folder system for files</li>
+              <li class="price-box__list-el">Unlimited Download Links</li>
+              <li class="price-box__list-el">High Download Speed</li>
+            </ul>
+            <div class="price-box__btn">
+              <a class="btn btn--blue btn--width">Start now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect sect--white" id="set-margin-about">
+    <div class="container">
+      <div class="row">
+        <h1 class="row__title">
+          About Us
+        </h1>
+        <h2 class="row__sub">Small summary about us.</h2>
+      </div>
+      <div class="row row--margin row--text-center">
+        <div class="col-md-8 col-sm-10 col-xs-12 row__carousel">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="item__content">
+                  <img class="item__img" src="/img/logoS.png" alt="ZeroTwo"><span class="item__name">ZeroTwo</span>
+                  <p class="item__description">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
+                    quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                    imperdiet a, venenatis vitae, justo.
+                  </p>
+                </div>
+                <div class="item__avatar"></div>
+                <p class="item__people">Pryanshu Sharma</p>
+                <p class="item__occupation">Director of LogicSpine</p>
+              </div>
+
+              <div class="item">
+                <div class="item__content">
+                  <img class="item__img" src="/img/logoHD.png" alt="Google"><span class="item__name">google</span>
+                  <p class="item__description">
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
+                    felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+                    pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+                    a, venenatis vitae, justo.
+                  </p>
+                </div>
+                <div class="item__avatar"></div>
+                <p class="item__people">Prerana Sharma</p>
+                <p class="item__occupation">Lawyer of LogicSpine</a>
+              </div>
+
+              <div class="item">
+                <div class="item__content">
+                  <img class="item__img" src="/img/logoHD.png" alt="Stackoverflow"><span
+                    class="item__name">stackoverflow</span>
+                  <p class="item__description">
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis
+                    enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+                    imperdiet a, venenatis vitae, justo.
+                  </p>
+                </div>
+                <div class="item__avatar"></div>
+                <p class="item__people">Jyoti Bhaia</p>
+                <p class="item__occupation">Manager of LogicSpine</a>
+              </div>
+
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <img class="carousel-control__img"
+                src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxLjQ5NCAzMS40OTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMxLjQ5NCAzMS40OTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPHBhdGggZD0iTTEwLjI3Myw1LjAwOWMwLjQ0NC0wLjQ0NCwxLjE0My0wLjQ0NCwxLjU4NywwYzAuNDI5LDAuNDI5LDAuNDI5LDEuMTQzLDAsMS41NzFsLTguMDQ3LDguMDQ3aDI2LjU1NCAgYzAuNjE5LDAsMS4xMjcsMC40OTIsMS4xMjcsMS4xMTFjMCwwLjYxOS0wLjUwOCwxLjEyNy0xLjEyNywxLjEyN0gzLjgxM2w4LjA0Nyw4LjAzMmMwLjQyOSwwLjQ0NCwwLjQyOSwxLjE1OSwwLDEuNTg3ICBjLTAuNDQ0LDAuNDQ0LTEuMTQzLDAuNDQ0LTEuNTg3LDBsLTkuOTUyLTkuOTUyYy0wLjQyOS0wLjQyOS0wLjQyOS0xLjE0MywwLTEuNTcxTDEwLjI3Myw1LjAwOXoiIGZpbGw9IiM2Zjc5ZmYiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <img class="carousel-control__img"
+                src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMxLjQ5IDMxLjQ5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMS40OSAzMS40OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8cGF0aCBkPSJNMjEuMjA1LDUuMDA3Yy0wLjQyOS0wLjQ0NC0xLjE0My0wLjQ0NC0xLjU4NywwYy0wLjQyOSwwLjQyOS0wLjQyOSwxLjE0MywwLDEuNTcxbDguMDQ3LDguMDQ3SDEuMTExICBDMC40OTIsMTQuNjI2LDAsMTUuMTE4LDAsMTUuNzM3YzAsMC42MTksMC40OTIsMS4xMjcsMS4xMTEsMS4xMjdoMjYuNTU0bC04LjA0Nyw4LjAzMmMtMC40MjksMC40NDQtMC40MjksMS4xNTksMCwxLjU4NyAgYzAuNDQ0LDAuNDQ0LDEuMTU5LDAuNDQ0LDEuNTg3LDBsOS45NTItOS45NTJjMC40NDQtMC40MjksMC40NDQtMS4xNDMsMC0xLjU3MUwyMS4yMDUsNS4wMDd6IiBmaWxsPSIjNmY3OWZmIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+
+            </a>
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="sect sect--white sect--no-padding">
+    <div class="container">
+      <div class="row row--center">
+        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+          <a href="#" class="partner__link">
+            <img class="partner_img" src="/img/fblogo.png">
+          </a>
+        </div>
+
+        <div class="col-md-3  col-xs-6 col-sm-6 partner">
+          <a href="#" class="partner__link">
+            <img class="partner_img" src="/img/twitterlogo.png">
+          </a>
+        </div>
+
+
+        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+          <a href="#" class="partner__link">
+            <img class="partner_img" src="/img/googlelogo.png">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-xs-6 col-sm-6 partner">
+          <a href="#" class="partner__link">
+            <img class="partner_img" src="/img/inlogo.png">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="sect sect--white" id="set-margin-about">
+    <div class="container">
+      <div class="row">
+        <h1 class="row__title">
+          Our blog's
+        </h1>
+        <h2 class="row__sub">Sneak peeks from our writings</h2>
+      </div>
+
+      <div class="row row--margin">
+        <div class="col-md-6 article-pre__col">
+          <a href="#" class="article-pre ">
+            <div class="article-pre__img article-pre__img--first"></div>
+            <h2 class="article-pre__info">
+              <span class="article-pre__cat">Protips • </span><span class="article-pre__aut"> by Jyoti</span> <span
+                class="article-pre__date"> - 5 mins read</span>
+            </h2>
+            <h1 class="article-pre__title">How to improve downloads using few tools in ZeroTwo<span
+                class="article-pre__arrow--purple"> →</span></h1>
+          </a>
+        </div>
+
+        <div class="col-md-6 article-pre__col">
+          <a href="#" class="article-pre ">
+            <div class="article-pre__img article-pre__img--second"></div>
+            <h2 class="article-pre__info">
+              <span class="article-pre__cat">Pricing • </span><span class="article-pre__aut"> by Pryanshu</span> <span
+                class="article-pre__date"> - 5 mins read</span>
+            </h2>
+            <h1 class="article-pre__title">Best price for your project <span class="article-pre__arrow--purple">→</span>
+            </h1>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 article-pre__col">
+          <a href="#" class="article-pre ">
+            <div class="article-pre__img article-pre__img--fourth"></div>
+            <h2 class="article-pre__info">
+              <span class="article-pre__cat">Success Stories • </span><span class="article-pre__aut"> by Jalaj</span>
+              <span class="article-pre__date"> - 5 mins read</span>
+            </h2>
+            <h1 class="article-pre__title">Jalaj told us about his success stories <span
+                class="article-pre__arrow--purple"> →</span></h1>
+          </a>
+        </div>
+
+        <div class="col-md-6 article-pre__col">
+          <a href="#" class="article-pre ">
+            <div class="article-pre__img article-pre__img--third"></div>
+            <h2 class="article-pre__info">
+              <span class="article-pre__cat">Protips • </span><span class="article-pre__aut"> by Prerana</span> <span
+                class="article-pre__date"> - 5 mins read</span>
+            </h2>
+            <h1 class="article-pre__title">How to Share files using ZeroTwo <span class="article-pre__arrow--purple">
+                →</span></h1>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect sect--padding-bottom" id="set-margin-about">
+    <div class="container">
+      <div class="row">
+        <h1 class="row__title">
+          Contact Us </h1>
+        <h2 class="row__sub">Feel free to ask any questions</h2>
+      </div>
+      <div class="row row--margin">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <div class="contacts">
+            <a href="#" class="contacts__link"><img src="/img/logoS.png">
+              <h1 class="contacts_title-ag">ZeroTwo<span class="contacts--light">.in</span></h1>
+            </a>
+            <p class="contacts__address">
+              Address<br>
+              Himachal Pradesh<br>
+              India
+            </p>
+            <p class="contacts__info">
+              whatsapp. <a href="whatsapp://send?phone=+919317428432&text=Hey" class="contacts__info-link">+91
+                9317428432</a>
+            </p>
+            <p class="contacts__info">
+              mail. <a href="mailto:contact@zerotwo.in?subject=Help&body=I%20Need%20%20Help"
+                class="contacts__info-link">contact@zerotwo.in</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form id="contact" class="form">
+            <div class="form-group">
+              <select class="form__field form__select">
+                <option selected value>Choose topic*</option>
+                <option value=1>Pricing</option>
+                <option value=2>Feedback</option>
+                <option value=3>Copyright</option>
+                <option value=4>Issue while downloading</option>
+                <option value=4>Issue while uploading files</option>
+                <option value=4>Link not opening</option>
+                <option value=4>File not found error</option>
+                <option value=4>Other (Not in the list)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <div class="form__field--half">
+                <input type="text" placeholder="Name*" class="form__field form__text"></input>
+              </div>
+              <div class="form__field--half">
+                <input type="text" placeholder="Surname (Optional)" class="form__field form__text"></input>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form__field--half">
+                <input type="text" placeholder="Email address*" class="form__field form__text"></input>
+              </div>
+              <div class="form__field--half">
+                <input type="text" placeholder="Phone number (Optional)" class="form__field form__text"></input>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea type="text" placeholder="Your messsage*" class="form__field form__textarea"></textarea>
+              <button class="btn btn--up btn--width" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="new_footer_area bg_color">
+    <div class="new_footer_top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s"
+              style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+              <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+              <p>Don’t miss any updates</p>
+              <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                <p class="mchimp-errmessage" style="display: none;"></p>
+                <p class="mchimp-sucmessage" style="display: none;"></p>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s"
+              style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+              <h3 class="f-title f_600 t_color f_size_18">Important Links</h3>
+              <ul class="list-unstyled f_list">
+                <li><a href="#">Android App</a></li>
+                <li><a href="#">LogicSpine</a></li>
+                <li><a href="#">Maiis</a></li>
+                <li><a href="#">Time Paradox</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s"
+              style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+              <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+              <ul class="list-unstyled f_list">
+                <li><a href="#">Term &amp; conditions</a></li>
+                <li><a href="#">Reporting</a></li>
+                <li><a href="#">Api Documentation</a></li>
+                <li><a href="#">Support Policy</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s"
+              style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+              <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+              <div class="f_social_icon">
+                <a href="#" class="fab fa-facebook"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                <a href="#" class="fab fa-telegram"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bg">
+        <div class="footer_bg_one"></div>
+        <div class="footer_bg_two"></div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <div class="container">
+        <div class="row align-items-center">
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="./script.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
