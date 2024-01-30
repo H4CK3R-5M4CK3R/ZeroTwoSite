@@ -407,9 +407,9 @@ body {
   }
 }
 
-@media screen and (max-width:450px) {
-  .upload {
-    margin-top: 25%;
+@media screen and (max-width:600px) {
+  .up-space {
+    margin-top: 20px;
   }
 }
 

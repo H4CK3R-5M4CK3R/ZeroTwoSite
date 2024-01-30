@@ -39,9 +39,9 @@
           <ul class="header__elenco">
             <li class="header__el"><a href="/index.html" class="header__link">Home</a></li>
             <li class="header__el"><a href="/upload.html" class="header__link">Upload</a></li>
-            <li class="header__el"><a href="/download.html" class="header__link">Search</a></li>
+            <li class="header__el"><a href="/search.html" class="header__link">Search</a></li>
             <li class="header__el"><a href="/privacy-policy.html" class="header__link">Privacy Policy</a></li>
-            <li class="header__el"><a href="#" class="header__link">Contact us</a></li>
+            <li class="header__el"><a href="https://linktr.ee/LogicSpine" class="header__link">Contact us</a></li>
             <li class="header__el header__el--blue log-in-button"><a href="#0" class="btn btn--white">Sign In →</a></li>
           </ul>
         </nav>
@@ -65,11 +65,11 @@
     </ul>
   </div>
 
-  <div class="sect sect--padding-top" style="margin-bottom: 100%;">
+  <div class="sect sect--padding-top">
     <div class="container">
       <div class="nav-search">
         <div class="search-input">
-          <i class="material-icons search-icon">search</i>
+          <i class="material-icons search-icon search-button">search</i>
           <input type="text" placeholder="What are you looking for..." id="search-input" />
           <div class="search-dropdown" id="hits-container"></div>
           <i class="close-search material-icons">close</i>
@@ -202,7 +202,7 @@
               style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
               <h3 class="f-title f_600 t_color f_size_18">Help</h3>
               <ul class="list-unstyled f_list">
-                <li><a href="#">Term &amp; conditions</a></li>
+                <li><a href="term-condition.html">Term &amp; conditions</a></li>
                 <li><a href="#">Reporting</a></li>
                 <li><a href="#">Api Documentation</a></li>
                 <li><a href="#">Support Policy</a></li>
@@ -243,7 +243,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="./script.js"></script>
 <script src="/js/script.js"></script>
 <script>
   function addSearchResult(title, size, link) {
@@ -258,11 +257,18 @@
                           </div>
                         </div>
                       </a>`;
-
     searchResults.append(resultHTML);
   }
 
-  addSearchResult("Sample Title", "1.23 GB", "https://example.com/sample-link");
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchButton = document.querySelector('.search-button');
+
+    if (searchButton) {
+        searchButton.addEventListener('click', function () {
+          addSearchResult("Sample Title", "1.23 GB", "https://example.com/sample-link");
+        });
+      }
+  });
 
 </script>
 </body>

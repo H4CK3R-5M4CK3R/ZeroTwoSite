@@ -45,7 +45,7 @@ html {
 
 .nav-search .search-input .search-icon {
     position: absolute;
-    left: 15px;
+    right: 15px;
     top: 13px;
     z-index: 999;
     color: #44A948;
@@ -58,7 +58,8 @@ html {
     border-radius: 4px;
     min-width: 300px;
     width: 100%;
-    padding-left: 50px;
+    padding-left: 2%;
+    padding-right: 50px;
 }
 
 .nav-search .search-input input:focus {
@@ -142,10 +143,38 @@ html {
     background-color: #FFE9A4;
 }
 
-.hit:last-child {
-    /*border: 0;*/
-}
-
 .ais-hits--item:last-child .hit {
     border: 0;
+}
+
+#hits-container {
+    position: absolute;
+    top: calc(100% + 10px); /* Adjust the space between the search bar and the results */
+    left: 0;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 400px; /* Set a maximum height if needed */
+}
+
+.nav-search {
+    position: relative;
+    z-index: 2;
+}
+
+.search-button {
+    cursor: pointer;
+}
+
+.sect {
+    margin-bottom: 25%;
+    margin-top: -50px;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-search {
+        margin-top: 25%;
+    }
+    .sect {
+        margin-bottom: 100%;
+    }
 }
