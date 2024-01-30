@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
     </style>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css'>
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/backgroubd.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -50,7 +51,8 @@
                         <li class="header__el"><a href="/search.html" class="header__link">Search</a></li>
                         <li class="header__el"><a href="/privacy-policy.html" class="header__link">Privacy Policy</a>
                         </li>
-                        <li class="header__el"><a href="https://linktr.ee/LogicSpine" class="header__link">Contact us</a></li>
+                        <li class="header__el"><a href="https://linktr.ee/LogicSpine" class="header__link">Contact
+                                us</a></li>
                         <li class="header__el header__el--blue log-in-button"><a href="#0" class="btn btn--white">Sign
                                 In →</a></li>
                     </ul>
@@ -202,6 +204,57 @@
         </div>
     </div>
 
+    <div class="hidden treact-popup fixed inset-0 flex items-center justify-center"
+        style="background-color: rgba(0,0,0,0.3); z-index: 9999;">
+        <div class="max-w-lg p-8 sm:pb-4 bg-white rounded shadow-lg text-center sm:text-left" id="disclaimer-container">
+            <h3 class="text-xl sm:text-2xl font-semibold mb-6 flex flex-col sm:flex-row items-center">
+                <div class="bg-green-200 p-2 rounded-full flex items-center mb-4 sm:mb-0 sm:mr-2">
+                    <svg class="text-green-800 inline-block w-5 h-5" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z">
+                        </path>
+                    </svg>
+                </div>
+                Disclaimer
+            </h3>
+            <p class="disclaimer" style="text-align: left;">
+                Zerotwo is a file uploading system that enables users to upload and share files. Users are
+                solely responsible for the content they upload, and it is essential to note that the uploading
+                of copyrighted files is strictly prohibited. In the event that a copyright strike is issued for
+                any uploaded file, Zerotwo will not be held responsible.
+
+                Public files, accessible through the website or Telegram, are uploaded by various users. If any
+                issues arise with these files, users are encouraged to contact us for resolution.
+
+                Please be aware that cookies are stored when logging in or downloading files from our platform.
+
+                <br><br><span class="font-bold">Copyright Act Information:</span><br><br>
+
+                Users are reminded to adhere to copyright laws, particularly as outlined in relevant sections of
+                the Copyright Act. Zerotwo complies with the provisions of the Copyright Act, and users are
+                expected to respect intellectual property rights. It is crucial to understand that Zerotwo
+                operates as a platform for file sharing, and the responsibility for uploaded content lies solely
+                with the user.
+
+                Given the nature of our service, where numerous files are uploaded continuously, it is
+                impractical for us to individually inspect each file. Zerotwo provides unlimited storage and
+                upload capabilities, and as such, we do not impose restrictions on the types of files users may
+                upload. It is the responsibility of the user to exercise caution and comply with all applicable
+                laws when accessing or downloading files from our platform.
+
+                By clicking the button below, you acknowledge and agree to abide by the terms outlined in this
+                disclaimer. You understand that Zerotwo is not liable for any consequences arising from the use
+                or misuse of the file-sharing service.
+            </p>
+            <div class="mt-8 pt-8 sm:pt-4 border-t -mx-8 px-8 flex flex-col sm:flex-row justify-end leading-relaxed">
+                <button
+                    class="close-treact-popup px-8 py-3 sm:py-2 rounded border border-gray-400 hover:bg-gray-200 transition duration-300">I
+                    Agree</button>
+            </div>
+        </div>
+    </div>
+
     <div class="space"></div>
 
     <footer class="new_footer_area bg_color">
@@ -279,6 +332,19 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <script src="/js/script.js"></script>
+    <script>
+        function closeTreactPopup() {
+            setCookie("accept", true, 15);
+            document.querySelector(".treact-popup").classList.add("hidden");
+        }
+        function openTreactPopup() {
+            if (!getCookie("accept")) {
+                document.querySelector(".treact-popup").classList.remove("hidden");
+            }
+        }
+        document.querySelector(".close-treact-popup").addEventListener("click", closeTreactPopup);
+        setTimeout(openTreactPopup, 1000);
+    </script>
 
 </body>
 
