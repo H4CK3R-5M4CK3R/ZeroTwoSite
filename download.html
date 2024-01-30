@@ -239,6 +239,7 @@
     <link rel="stylesheet" href="/css/backgroubd.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2"></script>
 
 </head>
 
@@ -443,17 +444,18 @@
         <section class="card-lg__container">
             <h1 class="card__text-lg">Your Name 2016</h1>
             <p class="card__text-md">SIZE : 458.8mb</p>
-            <a href="https://download.zerotwo.in/down/1068352349/name/code/date" class="card__btn download-button">
+            <a href="https://download.zerotwo.in/down/1068352349/name/code/date"
+               class="card__btn" onclick="startCaptcha(this, event)">
                 Download Now
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-download" viewBox="0 0 16 16">
-                    <path
-                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                    <path
-                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-                </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download"
+                viewBox="0 0 16 16">
+                <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                <path
+                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+            </svg>
             </a>
-            <a href="#" class="card__btn watch-online">
+            <a href="https://download.zerotwo.in/watch/1068352349/name/code/date" class="card__btn" onclick="startCaptcha(this, event)">
                 Watch Online
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display"
                     viewBox="0 0 16 16">
@@ -461,14 +463,7 @@
                         d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145" />
                 </svg>
             </a>
-            <div class="captcha-container">
-                <iframe title="reCAPTCHA" role="presentation" name="a-21poka4ukpol" scrolling="no"
-                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld7Y4omAAAAAKhWv9p6tsp8-X_cA02FVADpR5JZ&amp;co=aHR0cHM6Ly96ZXJvdHdvLmluOjQ0Mw..&amp;hl=en&amp;type=image&amp;v=QUpyTKFkX5CIV6EF8TFSWEif&amp;theme=light&amp;size=normal&amp;badge=bottomright&amp;cb=u7ig4w53ov8p"
-                    width="304" height="78" frameborder="0"></iframe>
-            </div>
             <br><br>
-            <!-- <div class="space"></div> -->
             <p class="card__text-sm">Discover our diverse range of services beyond file uploading</p>
         </section>
 
@@ -582,39 +577,27 @@
     setTimeout(openTreactPopup, 1000);
 </script>
 <script>
-    function fillCaptcha() {
-        // Your logic to fill the reCAPTCHA goes here
-        // For security reasons, it's not straightforward to programmatically interact with reCAPTCHA
-        // Consider using Google's reCAPTCHA API and follow their guidelines
-    }
-    function handleDownloadClick(event) {
+
+    function startCaptcha(b, event) {
         event.preventDefault();
-        fillCaptcha();
-        const link = event.currentTarget.getAttribute('href');
-        window.open(link, '_blank');
-    }
-    function handleWatchOnlineClick(event) {
-        event.preventDefault();
-        fillCaptcha();
-        const link = event.currentTarget.getAttribute('href');
-        window.open(link, '_blank');
-    }
-    document.querySelector('.download-button').addEventListener('click', handleDownloadClick);
-    document.querySelector('.watch-online').addEventListener('click', handleWatchOnlineClick);
-</script>
-<script>
-    function onRecaptchaSuccess(token) {
-        const downloadButton = document.querySelector('.download-button');
-        const originalUrl = downloadButton.getAttribute('href');
-        const modifiedUrl = `${originalUrl}/${token}`;
-        window.open(modifiedUrl, '_blank');
+        
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'download' })
+                .then(function (token) {
+                    redirectToDownload(token, b);
+                });
+        });
     }
 
-    document.querySelector('.download-button').addEventListener('click', function (event) {
-        event.preventDefault();
-        grecaptcha.execute();
-    });
+    function redirectToDownload(token, but) {
+        var downloadLink = but.getAttribute('href');
+        var separator = (downloadLink.indexOf('?') !== -1) ? '&' : '?';
+        var finalUrl = downloadLink + separator + 'token=' + token;
+        window.open(finalUrl, '_blank');
+    }
+
 </script>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src="/js/script.js"></script>
