@@ -642,7 +642,7 @@
         showLoading();
         grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'getlink' })
             .then(function (token) {
-                makeApiRequest(token, b);
+                makeApiRequest(token);
             });
     });
 
