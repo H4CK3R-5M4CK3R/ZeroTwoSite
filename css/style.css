@@ -1462,6 +1462,11 @@ a:hover {
     overflow-x: auto;
     text-align: left;
   }
+
+  .card-lg__container {
+    width: 60% !important;
+  }
+
 }
 
 /* Captcha code */
