@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/css/backgroubd.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="/css/loading.css">
 
 </head>
 
@@ -75,6 +76,13 @@
           <i class="close-search material-icons">close</i>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-text">loading</div>
     </div>
   </div>
 
@@ -294,6 +302,8 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2"></script>
 <script src="/js/script.js"></script>
 <script>
   function addSearchResult(title, size, link) {
@@ -316,7 +326,7 @@
 
     if (searchButton) {
       searchButton.addEventListener('click', function () {
-        addSearchResult("Sample Title", "1.23 GB", "https://example.com/sample-link");
+        startCaptcha();
       });
     }
   });
@@ -335,6 +345,38 @@
 
 </script>
 
-</body>
+<script>
 
+  function startCaptcha() {      
+      grecaptcha.ready(function () {
+          grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'search' })
+              .then(function (token) {
+                  searchglobalfile(token);
+              });
+      });
+  }
+
+  function searchglobalfile(token) {
+    let query = document.getElementById("search-input").value.trim();
+    if (query !== '') {
+        let url = `https://api.zerotwo.in/search?title=${query}&token=${token}`;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                $('#hits-container').empty();
+                data.forEach(function (result) {
+                    addSearchResult(result.title, result.size, result.link);
+                });
+            },
+            error: function (error) {
+                console.error('Error fetching search results:', error);
+            }
+        });
+    }
+}
+
+</script>
+</body>
 </html>
