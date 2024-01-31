@@ -267,7 +267,8 @@
                         <li class="header__el"><a href="/search.html" class="header__link">Search</a></li>
                         <li class="header__el"><a href="/privacy-policy.html" class="header__link">Privacy Policy</a>
                         </li>
-                        <li class="header__el"><a href="https://linktr.ee/LogicSpine" class="header__link">Contact us</a></li>
+                        <li class="header__el"><a href="https://linktr.ee/LogicSpine" class="header__link">Contact
+                                us</a></li>
                         <li class="header__el header__el--blue log-in-button"><a href="#0" class="btn btn--white">Sign
                                 In →</a></li>
                     </ul>
@@ -355,7 +356,8 @@
 
                     <p class="fieldset">
                         <input type="checkbox" id="accept-terms">
-                        <label for="accept-terms">I agree to the <a href="term-condition.html" style="color: rgb(45, 142, 221);">Terms</a></label>
+                        <label for="accept-terms">I agree to the <a href="term-condition.html"
+                                style="color: rgb(45, 142, 221);">Terms</a></label>
                     </p>
 
                     <p class="fieldset">
@@ -450,23 +452,24 @@
     <main class="main">
 
         <section class="card-lg__container">
-            <h1 class="card__text-lg">Your Name 2016</h1>
-            <p class="card__text-md">SIZE : 458.8mb</p>
-            <a href="https://download.zerotwo.in/down/1068352349/name/code/date"
-               class="card__btn" onclick="startCaptcha(this, event)">
+            <h1 class="card__text-lg" id="titl"></h1>
+            <p class="card__text-md" id="siz"></p>
+            <a href="#" class="card__btn"
+                onclick="startCaptcha(this, event)" id="downl">
                 Download Now
-            <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download"
-                viewBox="0 0 16 16">
-                <path
-                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                <path
-                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-            </svg>
+                <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-download" viewBox="0 0 16 16">
+                    <path
+                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                    <path
+                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                </svg>
             </a>
-            <a href="https://download.zerotwo.in/watch/1068352349/name/code/date" class="card__btn" onclick="startCaptcha(this, event)">
+            <a href="#" class="card__btn"
+                onclick="startCaptcha(this, event)" id="watc">
                 Watch Online
-                <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display"
-                    viewBox="0 0 16 16">
+                <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-display" viewBox="0 0 16 16">
                     <path
                         d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145" />
                 </svg>
@@ -588,7 +591,7 @@
 
     function startCaptcha(b, event) {
         event.preventDefault();
-        
+
         grecaptcha.ready(function () {
             grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'download' })
                 .then(function (token) {
@@ -605,10 +608,44 @@
     }
 
 </script>
-
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src="/js/script.js"></script>
 <script src="/js/loading.js"></script>
+<script>
+    function makeApiRequest(token) {
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        const uid = getQueryParam('uid');
+        const id = getQueryParam('id');
+        const n = getQueryParam('n');
+        const apiUrl = `https://api.zerotwo.in/downloadlink?uid=${uid}&id=${id}&n=${n}&token=${token}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("titl").innerText = data.name;
+                document.getElementById("siz").innerText = data.size;
+                document.getElementById("downl").href = data.download;
+                document.getElementById("watc").href = data.watch;
+                hideLoading();
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                hideLoading();
+            });
+    }
+
+    grecaptcha.ready(function () {
+        showLoading();
+        grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'getlink' })
+            .then(function (token) {
+                makeApiRequest(token, b);
+            });
+    });
+
+</script>
 
 </html>
