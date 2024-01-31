@@ -347,7 +347,8 @@
 
 <script>
 
-  function startCaptcha() {      
+  function startCaptcha() {
+    showLoading();
       grecaptcha.ready(function () {
           grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'search' })
               .then(function (token) {
@@ -369,9 +370,11 @@
                 data.forEach(function (result) {
                     addSearchResult(result.title, result.size, result.link);
                 });
+                hideLoading();
             },
             error: function (error) {
                 console.error('Error fetching search results:', error);
+                hideLoading();
             }
         });
     }
