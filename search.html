@@ -81,8 +81,8 @@
 
   <div class="loading-screen" id="loading-screen">
     <div class="loading-container">
-        <div class="loading"></div>
-        <div id="loading-text">loading</div>
+      <div class="loading"></div>
+      <div id="loading-text">loading</div>
     </div>
   </div>
 
@@ -195,7 +195,8 @@
 
           <p class="fieldset">
             <input type="checkbox" id="accept-terms">
-            <label for="accept-terms">I agree to the <a href="term-condition.html" style="color: rgb(45, 142, 221);">Terms</a></label>
+            <label for="accept-terms">I agree to the <a href="term-condition.html"
+                style="color: rgb(45, 142, 221);">Terms</a></label>
           </p>
 
           <p class="fieldset">
@@ -225,6 +226,9 @@
       </div>
       <a href="#0" class="cd-close-form">Close</a>
     </div>
+  </div>
+
+  <div id="toast" class="hidden">
   </div>
 
   <footer class="new_footer_area bg_color">
@@ -333,16 +337,16 @@
   });
 
   function closeTreactPopup() {
-      setCookie("accept", true, 15);
-      document.querySelector(".treact-popup").classList.add("hidden");
+    setCookie("accept", true, 15);
+    document.querySelector(".treact-popup").classList.add("hidden");
   }
   function openTreactPopup() {
-      if (!getCookie("accept")) {
-          document.querySelector(".treact-popup").classList.remove("hidden");
-      }
+    if (!getCookie("accept")) {
+      document.querySelector(".treact-popup").classList.remove("hidden");
+    }
   }
   document.querySelector(".close-treact-popup").addEventListener("click", closeTreactPopup);
-  setTimeout(openTreactPopup, 1000);
+  // setTimeout(openTreactPopup, 1000);
 
 </script>
 
@@ -350,37 +354,52 @@
 
   function startCaptcha() {
     showLoading();
-      grecaptcha.ready(function () {
-          grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'search' })
-              .then(function (token) {
-                  searchglobalfile(token);
-              });
-      });
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2', { action: 'search' })
+        .then(function (token) {
+          searchglobalfile(token);
+        });
+    });
   }
 
   function searchglobalfile(token) {
     let query = document.getElementById("search-input").value.trim();
     if (query !== '') {
-        let url = `https://api.zerotwo.in/search?title=${query}&token=${token}`;
-        $.ajax({
-            url: url,
-            method: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                $('#hits-container').empty();
-                data.forEach(function (result) {
-                    addSearchResult(result.title, result.size, result.link);
-                });
-                hideLoading();
-            },
-            error: function (error) {
-                console.error('Error fetching search results:', error);
-                hideLoading();
-            }
-        });
+      let url = `https://api.zerotwo.in/search?title=${query}&token=${token}`;
+      $.ajax({
+        url: url,
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          $('#hits-container').empty();
+          if (data.length === 0) {
+            showToast("No results found!");
+          } else {
+            data.forEach(function (result) {
+              addSearchResult(result.title, result.size, result.link);
+            });
+          }
+          hideLoading();
+        },
+        error: function (error) {
+          hideLoading();
+          showToast("No content found, Check your spelling mistake or try to use different approach");
+        }
+      });
     }
-}
+  }
+
+  function showToast(text) {
+    var toast = document.getElementById('toast');
+    toast.innerText = text;
+    toast.classList.remove('hidden');
+
+    setTimeout(function () {
+      toast.classList.add('hidden');
+    }, 3000);
+  }
 
 </script>
 </body>
+
 </html>
