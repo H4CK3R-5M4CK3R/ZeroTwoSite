@@ -208,7 +208,7 @@ body {
 }
 
 .upload .upload-files footer .list-files .file .progress {
-  width: 175px;
+  width: 50%;
   height: 8px;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -217,31 +217,6 @@ body {
   background: linear-gradient(to left, rgba(77, 182, 172, 0.2), rgba(77, 182, 172, 0.8)) no-repeat;
   background-size: 100% 100%;
 }
-
-/* .upload .upload-files footer .list-files .file .progress.active {
-  -webkit-animation: progress 30s linear;
-  animation: progress 30s linear;
-} */
-
-/* @-webkit-keyframes progress {
-  from {
-    background-size: 0 100%;
-  }
-
-  to {
-    background-size: 100% 100%;
-  }
-}
-
-@keyframes progress {
-  from {
-    background-size: 0 100%;
-  }
-
-  to {
-    background-size: 100% 100%;
-  }
-} */
 
 .upload .upload-files footer .list-files .file .done {
   cursor: pointer;
@@ -254,6 +229,23 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+/*  */
+
+.upload .upload-files footer .list-files .file .copy-upload:before {
+  content: "Copy";
+  position: relative;
+  top: 0px;
+  left: -5px;
+  font-size: 10px;
+  opacity: 0;
+}
+
+.upload .upload-files footer .list-files .file .copy-upload:hover:before {
+  transition: all 0.25s ease;
+  top: -2px;
+  opacity: 1;
 }
 
 .upload .upload-files footer .list-files .file .done:before {
@@ -270,6 +262,8 @@ body {
   top: -30px;
   opacity: 1;
 }
+
+/*  */
 
 .upload .upload-files footer .list-files .file .done.anim {
   -webkit-animation: done1 0.5s ease forwards;
@@ -425,20 +419,6 @@ body {
   display: none;
 }
 
-/*  */
-
-.file .copy-upload:before {
-  content: "Copy";
-  position: absolute;
-  top: -30px; /* Adjust this value to position the text properly */
-  left: -5px;
-  font-size: 24px;
-  opacity: 0;
-  transition: all 0.25s ease; /* Move the transition property here */
+.copy-upload {
+  padding-top: 5%;
 }
-
-.file .copy-upload:hover:before {
-  opacity: 1;
-}
-
-/*  */
