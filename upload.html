@@ -26,6 +26,8 @@
             margin: 0;
         }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2"></script>
 
 </head>
 
@@ -197,7 +199,7 @@
                 <i class="fa fa-file-alt pointer-none" aria-hidden="true"></i>
                 <p class="pointer-none"><b>Drag and drop</b> files here <br /> or <a id="triggerFile">browse</a>
                     to begin the upload</p>
-                <input type="file" multiple="multiple" />
+                <input type="file"/>
             </div>
             <footer>
                 <div class="divider">
@@ -353,6 +355,7 @@
         }
         document.querySelector(".close-treact-popup").addEventListener("click", closeTreactPopup);
         setTimeout(openTreactPopup, 1000);
+
     </script>
 
 </body>
