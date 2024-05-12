@@ -75,7 +75,7 @@ function uploadFile(file, captchaToken) {
   xhr.onerror = function() {
     document.getElementsByClassName("error-upload")[0].style.display = "block";
   };
-  xhr.open('POST', 'http://upload.zerotwo.in/upload');
+  xhr.open('POST', 'https://upload.zerotwo.in/upload');
   xhr.send(formData);
 }
 
