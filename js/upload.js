@@ -61,6 +61,7 @@ function uploadFile(file, captchaToken) {
       if (response.status) {
         document.getElementsByClassName("done-upload")[0].style.display = "block";
         document.getElementsByClassName("copy-upload")[0].style.display = "block";
+        document.getElementsByClassName("send-upload")[0].style.display = "block";
         document.getElementsByClassName("lnk")[0].href = response.link
         if (navigator.share) {
           document.getElementsByClassName("share-upload")[0].style.display = "block";
