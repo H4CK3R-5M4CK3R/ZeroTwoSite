@@ -118,7 +118,7 @@ App.init = function () {
         </a>
     </div>
 
-    <div class="send-upload" style="display: block; padding-bottom: 6%">
+    <div class="send-upload" style="display: none; padding-bottom: 6%">
       <a title="Send Link" onclick="open_send()">
       <svg height="16px" width="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 16 16" id="send"><g display="none"><polyline fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="11.5 10.5 9.5 15.5 6.5 9.5 .5 6.5 15.5 .5 12.2 8.8"></polyline><polyline fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="5.5 9 5.5 12.5 7.5 11.5"></polyline><line x1="6.5" x2="15" y1="9.5" y2="1" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></line></g><path d="M15.9,0.1C15.7,0,15.5,0,15.3,0l-15,6C0.1,6.1,0,6.3,0,6.5c0,0.2,0.1,0.4,0.3,0.5L5,9.3v3.2
       c0,0.2,0.1,0.3,0.2,0.4C5.3,13,5.4,13,5.5,13c0.1,0,0.2,0,0.2-0.1l1.6-0.8l1.8,3.6C9.1,15.9,9.3,16,9.5,16c0,0,0,0,0,0
