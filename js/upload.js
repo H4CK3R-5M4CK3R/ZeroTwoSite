@@ -29,10 +29,10 @@ function shareLink() {
           text: 'Check out this file: ',
           url: link,
       })
-      .then(() => console.log('Shared successfully'))
+      .then(() => showToast('Shared successfully'))
       .catch((error) => console.error('Error sharing:', error));
   } else {
-      console.log('Web Share API not supported.');
+    showToast('Web Share API not supported.');
   }
 }
 
@@ -40,9 +40,9 @@ function copyLink(event) {
   event.preventDefault();
   const link = document.querySelector('.lnk').getAttribute('href');
   navigator.clipboard.writeText(link).then(() => {
-    console.log('Link copied to clipboard:', link);
+    showToast('Link copied to clipboard:', link);
   }).catch((error) => {
-    console.error('Failed to copy link:', error);
+    showToast('Failed to copy link:', error);
   });
 }
 
@@ -65,18 +65,34 @@ function uploadFile(file, captchaToken) {
         if (navigator.share) {
           document.getElementsByClassName("share-upload")[0].style.display = "block";
         }
+        showToast("File uploaded success");
       } else {
         document.getElementsByClassName("error-upload")[0].style.display = "block";
+        showToast("Error while uploading the file 651681");
       }
     } else {
       document.getElementsByClassName("error-upload")[0].style.display = "block";
+      showToast("Error while uploading the file, 214454");
     }
   };
   xhr.onerror = function() {
     document.getElementsByClassName("error-upload")[0].style.display = "block";
+    showToast("Error while uploading the file 516815");
   };
   xhr.open('POST', 'https://upload.zerotwo.in/upload');
   xhr.send(formData);
+}
+
+function open_send(){
+  document.querySelector(".pop-send").classList.remove("hidden");
+}
+
+function close_send(){
+  document.querySelector(".pop-send").classList.add("hidden");
+}
+
+function send_link(){
+  showToast("This feature is not yet available");
 }
 
 let App = {};
@@ -95,11 +111,23 @@ App.init = function () {
 			</a>
      </div>
 
-     <div class="copy-upload" style="display: none; padding-bottom: 11%">
+     <div class="copy-upload" style="display: none; padding-bottom: 6%">
         <a href="" target="_blank" onclick="copyLink(event)" title="Copy">
             <?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"><path d="M16,20H8a3,3,0,0,1-3-3V7A1,1,0,0,0,3,7V17a5,5,0,0,0,5,5h8a1,1,0,0,0,0-2Zm-6-7a1,1,0,0,0,1,1h5a1,1,0,0,0,0-2H11A1,1,0,0,0,10,13ZM21,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,14.05,2H10A3,3,0,0,0,7,5V15a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V9S21,9,21,8.94ZM15,5.41,17.59,8H16a1,1,0,0,1-1-1ZM19,15a1,1,0,0,1-1,1H10a1,1,0,0,1-1-1V5a1,1,0,0,1,1-1h3V7a3,3,0,0,0,.18,1H11a1,1,0,0,0,0,2h8Z" fill="#6563ff"/></svg>
         </a>
     </div>
+
+    <div class="send-upload" style="display: block; padding-bottom: 6%">
+      <a title="Send Link" onclick="open_send()">
+      <svg height="16px" width="16px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 16 16" id="send"><g display="none"><polyline fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="11.5 10.5 9.5 15.5 6.5 9.5 .5 6.5 15.5 .5 12.2 8.8"></polyline><polyline fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="5.5 9 5.5 12.5 7.5 11.5"></polyline><line x1="6.5" x2="15" y1="9.5" y2="1" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></line></g><path d="M15.9,0.1C15.7,0,15.5,0,15.3,0l-15,6C0.1,6.1,0,6.3,0,6.5c0,0.2,0.1,0.4,0.3,0.5L5,9.3v3.2
+      c0,0.2,0.1,0.3,0.2,0.4C5.3,13,5.4,13,5.5,13c0.1,0,0.2,0,0.2-0.1l1.6-0.8l1.8,3.6C9.1,15.9,9.3,16,9.5,16c0,0,0,0,0,0
+      c0.2,0,0.4-0.1,0.4-0.3l2-5c0.1-0.3,0-0.5-0.3-0.6c-0.3-0.1-0.5,0-0.6,0.3l-1.6,4L7.1,9.6l7-7l-2.4,6c-0.1,0.3,0,0.5,0.3,0.6
+      c0.3,0.1,0.5,0,0.6-0.3L16,0.7C16,0.5,16,0.3,15.9,0.1z M13.4,1.9l-7,7L1.7,6.6L13.4,1.9z M6,11.7V9.8l0.1,0.1l0.7,1.4L6,11.7z" display="none"></path><g><polygon fill="#e4f5f7" points="14.5 2.5 14.5 2 13.5 2 13.5 2.9 2.3 7.4 6.5 9.5 9.5 15.5 14.7 2.4"></polygon><polyline fill="#bfdadd" points="5.5 9 5.5 12.5 7.5 11.5"></polyline><path fill="#3e3643" d="M15.9,0.1C15.7,0,15.5,0,15.3,0l-15,6C0.1,6.1,0,6.3,0,6.5c0,0.2,0.1,0.4,0.3,0.5L5,9.3v3.2
+          c0,0.2,0.1,0.3,0.2,0.4C5.3,13,5.4,13,5.5,13c0.1,0,0.2,0,0.2-0.1l1.6-0.8l1.8,3.6C9.1,15.9,9.3,16,9.5,16c0,0,0,0,0,0
+          c0.2,0,0.4-0.1,0.4-0.3l2-5c0.1-0.3,0-0.5-0.3-0.6c-0.3-0.1-0.5,0-0.6,0.3l-1.6,4L7.1,9.6l7-7l-2.4,6c-0.1,0.3,0,0.5,0.3,0.6
+          c0.3,0.1,0.5,0,0.6-0.3L16,0.7C16,0.5,16,0.3,15.9,0.1z M13.4,1.9l-7,7L1.7,6.6L13.4,1.9z M6,11.7V9.8l0.1,0.1l0.7,1.4L6,11.7z"></path></g></svg>
+      </a>
+  </div>
 
     <div class="short-upload" style="display: none;">
       <a href="" target="_blank" title="Short Link">
@@ -135,15 +163,16 @@ App.init = function () {
     }, 1000);
 
     Object.keys(files).forEach(file => {
-      let load = 1000; // fake load
+      let load = 1000;
       setTimeout(() => {
         function startCaptchaAndUpload(fil, file) {
             startCaptcha().then(function(token) {
-                uploadFile(fil, token); // Call uploadFile with the captcha token
+                uploadFile(fil, token);
                 $(`.file--${file}`).querySelector(".progress").classList.remove("active");
                 $(`.file--${file}`).querySelector(".done").classList.add("anim");
             }).catch(function(error) {
                 console.error("Error starting captcha:", error);
+                showToast("Error while getting the captcha (Reload required)");
             });
         }
         startCaptchaAndUpload(files[file], file)
@@ -186,3 +215,10 @@ App.init = function () {
   // input change
   $("input[type=file]").addEventListener("change", handleFileSelect);
 }();
+
+var closediv = document.getElementsByClassName("pop-send")[0];
+closediv.addEventListener("click", function(event) {
+  if (event.target === closediv) {
+    close_send();
+  }
+});

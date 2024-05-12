@@ -231,14 +231,27 @@ body {
   flex-direction: column;
 }
 
-/*  */
+.upload .upload-files footer .list-files .file .send-upload:before {
+  content: "Send";
+  position: relative;
+  top: 0px;
+  left: -5px;
+  font-size: 12px;
+  opacity: 0;
+}
+
+.upload .upload-files footer .list-files .file .send-upload:hover:before {
+  transition: all 0.25s ease;
+  top: -2px;
+  opacity: 1;
+}
 
 .upload .upload-files footer .list-files .file .copy-upload:before {
   content: "Copy";
   position: relative;
   top: 0px;
   left: -5px;
-  font-size: 10px;
+  font-size: 12px;
   opacity: 0;
 }
 
@@ -262,8 +275,6 @@ body {
   top: -30px;
   opacity: 1;
 }
-
-/*  */
 
 .upload .upload-files footer .list-files .file .done.anim {
   -webkit-animation: done1 0.5s ease forwards;
@@ -415,10 +426,22 @@ body {
   }
 }
 
+@media screen and (max-width: 380px){
+  .upload .upload-files footer .list-files .file {
+    width: 250px;
+  }
+}
+
 .done-upload {
   display: none;
 }
 
-.copy-upload {
+.send-upload .copy-upload {
   padding-top: 5%;
+}
+
+.pop-send {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 99;
 }

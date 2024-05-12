@@ -28,7 +28,6 @@
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LevqiclAAAAACiWAicy45fF4soqeKs9mCyfIWY2"></script>
-
 </head>
 
 <body>
@@ -184,6 +183,9 @@
         </div>
     </div>
 
+    <div id="toast" class="hidden">
+    </div>
+
     <div class="up-space"></div>
 
     <div class="upload">
@@ -261,6 +263,48 @@
                 <button
                     class="close-treact-popup px-8 py-3 sm:py-2 rounded border border-gray-400 hover:bg-gray-200 transition duration-300">I
                     Agree</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden pop-send fixed inset-0 flex items-center justify-center">
+        <div class="send-popup"
+            style="background-color: rgba(0,0,0,0.3); z-index: 9999; height: fit-content;">
+            <div class="max-w-lg p-8 sm:pb-4 bg-white rounded shadow-lg text-center sm:text-left" id="disclaimer-container" style="width: 110%;">
+                <h3 class="text-xl sm:text-2xl font-semibold mb-6 flex flex-col sm:flex-row items-center">
+                    <div class="bg-green-200 p-2 rounded-full flex items-center mb-4 sm:mb-0 sm:mr-2">
+                        <svg class="text-green-800 inline-block w-5 h-5" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z">
+                            </path>
+                        </svg>
+                    </div>
+                    Send Download Link
+                </h3>
+
+                <form id="shareForm">
+                    <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="socialMedia" value="Telegram" checked> Telegram
+                    </label>
+                    <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="socialMedia" value="Gmail"> Gmail
+                    </label>
+                    <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="socialMedia" value="Whatsapp"> Whatsapp
+                    </label>
+                    <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="socialMedia" value="Instagram"> Instagram
+                    </label>
+                    <label style="display: block; margin-bottom: 10px;">
+                    <input type="radio" name="socialMedia" value="Facebook"> Facebook
+                    </label>
+                    <input type="text" id="username" name="username" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px; box-sizing: border-box;" placeholder="Enter Telegram Username or ID" required>
+                </form>
+
+                <div class="mt-8 pt-8 sm:pt-4 border-t -mx-8 px-8 flex flex-col sm:flex-row justify-end leading-relaxed">
+                    <button class="close-treact-popup px-8 py-3 sm:py-2 rounded border border-gray-400 hover:bg-gray-200 transition duration-300" onclick="send_link()">Send</button>
+                </div>
             </div>
         </div>
     </div>
@@ -344,6 +388,37 @@
     <script src="/js/script.js"></script>
     <script src="/js/loading.js"></script>
     <script>
+
+        function updatePlaceholder() {
+            var socialMedia = document.querySelector('input[name="socialMedia"]:checked').value;
+            var placeholderText = "";
+            switch (socialMedia) {
+            case "Telegram":
+                placeholderText = "Enter Telegram Username or ID";
+                break;
+            case "Gmail":
+                placeholderText = "Enter Mail";
+                break;
+            case "Whatsapp":
+                placeholderText = "Enter Phone Number";
+                break;
+            case "Instagram":
+                placeholderText = "Enter Instagram Username or ID";
+                break;
+            case "Facebook":
+                placeholderText = "Enter Facebook Username or ID";
+                break;
+            }
+            document.getElementById("username").placeholder = placeholderText;
+        }
+
+        updatePlaceholder();
+
+        var radioButtons = document.querySelectorAll('input[name="socialMedia"]');
+        radioButtons.forEach(function(radioButton) {
+            radioButton.addEventListener('change', updatePlaceholder);
+        });
+
         function closeTreactPopup() {
             setCookie("accept", true, 15);
             document.querySelector(".treact-popup").classList.add("hidden");
@@ -355,6 +430,16 @@
         }
         document.querySelector(".close-treact-popup").addEventListener("click", closeTreactPopup);
         setTimeout(openTreactPopup, 1000);
+        
+        function showToast(text) {
+            var toast = document.getElementById('toast');
+            toast.innerText = text;
+            toast.classList.remove('hidden');
+
+            setTimeout(function () {
+            toast.classList.add('hidden');
+            }, 3000);
+        }
 
     </script>
 
