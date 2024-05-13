@@ -49,7 +49,7 @@ function copyLink(event) {
 function uploadFile(file, captchaToken) {
   const formData = new FormData();
   formData.append('file', file);
-  formData.append('token', 'pryanshutest');
+  formData.append('token', captchaToken);
   const xhr = new XMLHttpRequest();
   xhr.upload.onprogress = function(event) {
     const percentComplete = (event.loaded / event.total) * 100;
@@ -79,7 +79,7 @@ function uploadFile(file, captchaToken) {
   xhr.onerror = function() {
     document.getElementsByClassName("error-upload")[0].style.display = "block";
     // showToast("Error while uploading the file 516815");
-    showToast("Error while uploading the file 516815", xhr.responseText, " - Error");
+    showToast("Error while uploading the file 516815" + xhr.responseText + " - Error");
   };
   xhr.open('POST', 'https://upload.zerotwo.in/upload');
   xhr.send(formData);
