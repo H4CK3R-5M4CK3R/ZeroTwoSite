@@ -79,11 +79,12 @@ function uploadFile(file, captchaToken) {
   xhr.onerror = function() {
     document.getElementsByClassName("error-upload")[0].style.display = "block";
     // showToast("Error while uploading the file 516815");
-    showToast("Error while uploading the file 516815", xhr.responseText);
+    showToast("Error while uploading the file 516815", xhr.responseText, " - Error");
   };
   xhr.open('POST', 'https://upload.zerotwo.in/upload');
   xhr.send(formData);
 }
+
 
 function open_send(){
   document.querySelector(".pop-send").classList.remove("hidden");
