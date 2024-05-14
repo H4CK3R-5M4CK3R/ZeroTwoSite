@@ -82,14 +82,14 @@ function uploadFile(file, captchaToken) {
       console.log("Stage 9");
     }
   };
-  xhr.onerror = function() {
-    console.log("Stage 10");
-    document.getElementsByClassName("error-upload")[0].style.display = "block";
-    console.log("Stage 11");
-    // showToast("Error while uploading the file 516815");
-    showToast("Error while uploading the file 516815" + xhr.responseText + " STATUS : " + xhr.status + " - Error");
-    console.log("Stage 12");
-  };
+  // xhr.onerror = function() {
+  //   console.log("Stage 10");
+  //   document.getElementsByClassName("error-upload")[0].style.display = "block";
+  //   console.log("Stage 11");
+  //   // showToast("Error while uploading the file 516815");
+  //   showToast("Error while uploading the file 516815" + xhr.responseText + " STATUS : " + xhr.status + " - Error");
+  //   console.log("Stage 12");
+  // };
   console.log("Stage 1");
   xhr.open('POST', 'https://upload.zerotwo.in/upload');
   console.log("Stage 2");
