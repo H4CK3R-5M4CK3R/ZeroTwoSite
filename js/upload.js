@@ -56,7 +56,9 @@ function uploadFile(file, captchaToken) {
     setProgressBarPercentage(parseInt(percentComplete.toFixed(2), 10));
   };
   xhr.onload = function() {
+    console.log("Stage 4");
     if (xhr.status === 200) {
+      console.log("Stage 5");
       const response = JSON.parse(xhr.responseText);
       if (response.status) {
         document.getElementsByClassName("done-upload")[0].style.display = "block";
@@ -68,23 +70,32 @@ function uploadFile(file, captchaToken) {
         }
         showToast("File uploaded success");
       } else {
+        console.log("Stage 6");
         document.getElementsByClassName("error-upload")[0].style.display = "block";
+        console.log("Stage 7");
         showToast("Error while uploading the file 651681");
       }
     } else {
+      console.log("Stage 8");
       document.getElementsByClassName("error-upload")[0].style.display = "block";
       showToast("Error while uploading the file, 214454");
+      console.log("Stage 9");
     }
   };
   xhr.onerror = function() {
+    console.log("Stage 10");
     document.getElementsByClassName("error-upload")[0].style.display = "block";
+    console.log("Stage 11");
     // showToast("Error while uploading the file 516815");
-    showToast("Error while uploading the file 516815" + xhr.responseText + " - Error");
+    showToast("Error while uploading the file 516815" + xhr.responseText + " STATUS : " + xhr.status + " - Error");
+    console.log("Stage 12");
   };
+  console.log("Stage 1");
   xhr.open('POST', 'https://upload.zerotwo.in/upload');
+  console.log("Stage 2");
   xhr.send(formData);
+  console.log("Stage 3");
 }
-
 
 function open_send(){
   document.querySelector(".pop-send").classList.remove("hidden");
